@@ -1,0 +1,5 @@
+Basic functionality:
+  - Users can create an account
+  - Users can create their own blog
+  - Users can comment on blog posts (with account or anonymous)
+  - People can subscribe to others' blogs
