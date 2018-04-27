@@ -1,14 +1,14 @@
-var express = require("express");
-var mysql = require("mysql");
+const express = require("express");
+const mysql = require("mysql");
 
-var conn = {
+const conn = {
     host: "160.153.131.217",
     user: "smath",
     password: "Smath1234!",
     db: "niklas_test"
 };
 
-var pool = mysql.createPool({
+let pool = mysql.createPool({
     connectionLimit: 50,
     host     : conn.host,
     user     : conn.user,
@@ -16,10 +16,11 @@ var pool = mysql.createPool({
     database : conn.db
 });
 
-var execQuery = function(queryStr, callback){
+let execQuery = function(queryStr, callback){
 
     pool.getConnection(function(err, connection){
-        connection.query(queryStr, function(error, results, fields){
+        let sql = connection.escape(queryStr);
+        connection.query(sql, function(error, results, fields){
            if(!!error){
                connection.release();
                callback(error, results, fields);
