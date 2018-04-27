@@ -22,7 +22,7 @@ let User = function User(username, description, firstName, lastName, city, count
     };
 
     this.setId = function(newId){
-        
+
     };
 
     this.create = function(){
