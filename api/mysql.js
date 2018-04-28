@@ -19,8 +19,8 @@ let pool = mysql.createPool({
 let execQuery = function(queryStr, callback){
 
     pool.getConnection(function(err, connection){
-        let sql = connection.escape(queryStr);
-        connection.query(sql, function(error, results, fields){
+        //let sql = connection.escape(queryStr);
+        connection.query(queryStr, function(error, results, fields){
            if(!!error){
                connection.release();
                callback(error, results, fields);
