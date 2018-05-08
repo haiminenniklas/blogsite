@@ -67,6 +67,7 @@ let User = function User(username, birthDate, description, firstName, lastName, 
         return subscriptions;
     };
 
+
     this.addSubscription = function(subscription){
         this.subscribedTo.push(subscription);
     };

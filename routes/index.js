@@ -1,7 +1,7 @@
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
 
-const user = require("../api/user.js");
+//Testing commit
 
 router.get('/', function(req, res, next) {
     //user.createUser("TeamRaiderz", "22.2.2003", "The developer", "Niklas", "Haiminen", "Helsinki", "Finland", "salasana1234");
