@@ -19,3 +19,38 @@ nav {
 .dropdown-content li > a, .dropdown-content li > span {
     color: var(--red) !important;
 }
+
+.button {
+    color: var(--white);
+    background: var(--blue);
+    padding: 10px 5px;
+    margin: 5px 3px;
+    text-align: center;
+
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+
+}
+
+.register-text {
+    text-align: center;
+}
+
+a {
+    color: var(--blue);
+}
+
+/* Footer */
+.footer {
+    color: var(--black);
+    text-align: center;
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+.footer a {
+    color: #FED766 !important;
+    font-weight: bold;
+    font-size: 1.6rem;
+}
