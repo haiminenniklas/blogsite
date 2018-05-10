@@ -1,0 +1,22 @@
+<%- include('other/header'); -%>
+
+<form action="/login" id="registerform" method="post">
+    <input type="text" placeholder="Username..." name="username" required>
+    <input type="text" placeholder="First name..." name="firstname" required>
+    <input type="text" placeholder="Last name..." name="lastname" required>
+
+    <input type="date" name="birthdate" required> <br><br>
+    <input type="text" name="city" placeholder="City you live in..." required >
+    <input type="text" name="country" placeholder="Country you live in..." required>
+
+    <textarea name="description" form="registerform" placeholder="Description (optional)"></textarea>
+
+    <input type="password" placeholder="Password..." name="password" required>
+    <input type="hidden" value="register" name="type">
+
+    <button type="submit">Submit</button>
+</form>
+
+<p style="text-align: center;"> Have an account already? <a href="/login/">Login here </a></p>
+
+<%- include('other/footer'); -%>

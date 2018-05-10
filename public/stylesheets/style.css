@@ -1,8 +1,21 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+:root {
+    --black: #231F20;
+    --white: #EDF2F4;
+    --red: #FF0022;
+    --blue: #8ACDEA;
+    --green: #BEEF9E;
 }
 
-a {
-  color: #00B7FF;
+/* Navbar style */
+nav {
+    background: var(--red) !important;
+    color: var(--white) !important;
+}
+
+.dropdown-content li {
+    background: var(--white);
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+    color: var(--red) !important;
 }

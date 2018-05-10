@@ -20,8 +20,11 @@ let execQuery = function(queryStr, callback){
 
     pool.getConnection(function(err, connection){
         //let sql = connection.escape(queryStr);
-        connection.query(queryStr, function(error, results, fields){
-           if(!!error){
+        let sql = connection.escapeId(queryStr);
+        //Remove quotes and the end and from the start
+        sql = sql.substring(1, sql.length - 1);
+        connection.query(sql, function(error, results, fields){
+           if(error){
                connection.release();
                callback(error, results, fields);
            } else {

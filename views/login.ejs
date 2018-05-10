@@ -1,0 +1,12 @@
+<%- include('other/header'); -%>
+
+<form action="/login" method="post">
+    <input type="text" placeholder="Username..." name="username" required> <br>
+    <input type="password" placeholder="Password..." name="password" required> <br>
+    <input type="hidden" value="login" name="type"> <br>
+    <button type="submit">Submit</button>
+</form>
+
+<a href="/login/register">Register here!</a>
+
+<%- include('other/footer'); -%>
