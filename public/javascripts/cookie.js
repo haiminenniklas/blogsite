@@ -7,7 +7,7 @@ function Cookie(document){
 
     //Check if a specific cookie is set
     this.checkCookie = function(cname){
-        let cookie = getCookie(cname);
+        let cookie = this.getCookie(cname);
         return cookie !== "";
     };
 
@@ -49,7 +49,12 @@ function Cookie(document){
             let d = new Date();
             d.setTime(d.getTime() + (exdays*24*60*60*1000));
             expires = "expires=" + d.toUTCString();
-        }
+        } else {
+			//If expiration date hasn't been set, set it to two months from today
+			let d = new Date();
+			d.setTime(d.getTime() + (61*24*60*60*1000));
+			expires = "expires=" + d.toUTCString();
+		}
 
         document.cookie = `${cname}=${cvalue};${expires};path=/`;
         //Return to the just updated cookie

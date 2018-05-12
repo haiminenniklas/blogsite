@@ -1,22 +1,39 @@
 <%- include('other/header'); -%>
 
-<form action="/login" id="registerform" method="post">
-    <input type="text" placeholder="Username..." name="username" required>
-    <input type="text" placeholder="First name..." name="firstname" required>
-    <input type="text" placeholder="Last name..." name="lastname" required>
+<div class="container">
+    <div class="login">
+        <h1>Register</h1>
+        <form action="/login" id="registerform" method="post">
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" placeholder="Username..." name="username" id="username" required> <br>
+            <label for="firstname" class="form-label">First name:</label>
+            <input type="text" placeholder="First name..." name="firstname" id="firstname" required> <br>
+            <label for="lastname" class="form-label">Last name:</label>
+            <input type="text" placeholder="Last name..." name="lastname" id="lastname" required> <br>
 
-    <input type="date" name="birthdate" required> <br><br>
-    <input type="text" name="city" placeholder="City you live in..." required >
-    <input type="text" name="country" placeholder="Country you live in..." required>
+            <label for="birthdate" class="form-label">Birth date:</label>
+            <input type="date" name="birthdate" id="birthdate" required> <br>
+            <label for="city" class="form-label">City:</label>
+            <input type="text" name="city" placeholder="City you live in..." id="city" required > <br>
+            <label for="country" class="form-label">Country:</label>
+            <input type="text" name="country" placeholder="Country you live in..." id="country" required> <br>
 
-    <textarea name="description" form="registerform" placeholder="Description (optional)"></textarea>
+            <label for="description" class="form-label">Description:</label>
+            <textarea name="description" form="registerform" placeholder="Description (optional)" id="description" class="materialize-textarea"></textarea> <br>
 
-    <input type="password" placeholder="Password..." name="password" required>
-    <input type="hidden" value="register" name="type">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" placeholder="Password..." name="password" id="password" required> <br>
+            <input type="hidden" value="register" name="type">
 
-    <button type="submit">Submit</button>
-</form>
+            <input type="submit" class="button login-btn center" id="register" value="Register">
+        </form>
+    </div>
+</div>
 
-<p class="register-text"> Have an account already? <a href="/login/">Login here </a></p>
+<p class="register-text"> Have an account already? <a href="/login/">Login here </a>!</p>
 
 <%- include('other/footer'); -%>
+
+<script>
+
+</script>

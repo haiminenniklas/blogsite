@@ -6,10 +6,21 @@
     --green: #BEEF9E;
 }
 
+body {
+	font-family: 'Arimo', sans-serif;
+}
+
 /* Navbar style */
 nav {
     background: var(--red) !important;
-    color: var(--white) !important;
+}
+
+.pc-nav li > a {
+	font-size: 1.4rem;
+}
+
+.navbar-close {
+	text-align: center;
 }
 
 .dropdown-content li {
@@ -17,20 +28,42 @@ nav {
 }
 
 .dropdown-content li > a, .dropdown-content li > span {
-    color: var(--red) !important;
+    color: var(--black) !important;
+	font-size: 1.3rem;
 }
+
+/* Other */
 
 .button {
     color: var(--white);
     background: var(--blue);
-    padding: 10px 5px;
-    margin: 5px 3px;
+    padding: 15px 20px;
+	font-size: 1.2em;
     text-align: center;
-
+	display: inline-block;
+	text-decoration: none;
     border-radius: 8px;
     -moz-border-radius: 8px;
     -webkit-border-radius: 8px;
+}
 
+.login-btn {
+	background: white;
+	color: var(--black);
+	border: 2px solid var(--blue);
+	transition: all 0.1s ease;
+}
+
+.login-btn:hover {
+	background: var(--blue);
+	color: white;
+	border: 2px solid var(--blue);
+}
+
+.center {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .register-text {
@@ -41,16 +74,47 @@ a {
     color: var(--blue);
 }
 
+.login {
+	margin: 40px 0;
+}
+
+.login > h1 {
+    color: var(--black);
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.form-label {
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 1rem;
+	color: var(--black);
+	font-style: italic;
+	opacity: 0.7;
+}
+
+/* label focus color */
+input:focus + label, textarea:focus {
+   color: var(--blue) !important;
+ }
+ /* label underline focus color */
+ input:focus, textarea:focus {
+   border-bottom: 1px solid var(--blue) !important;
+   box-shadow: 0 1px 0 0 var(--blue) !important
+ }
+
 /* Footer */
 .footer {
     color: var(--black);
     text-align: center;
     font-style: italic;
     font-size: 1.5rem;
+	margin: 40px 0;
 }
 
 .footer a {
-    color: #FED766 !important;
+	color: var(--black) !important;
     font-weight: bold;
     font-size: 1.6rem;
 }

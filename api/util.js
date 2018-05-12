@@ -1,4 +1,5 @@
 const bcrypt = require("bcrypt");
+const mysql = require("./mysql.js");
 
 let hash = function(plainPassword, callback){
 

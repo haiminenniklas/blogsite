@@ -1,12 +1,27 @@
 <%- include('other/header'); -%>
 
-<form action="/login" method="post">
-    <input type="text" placeholder="Username..." name="username" required> <br>
-    <input type="password" placeholder="Password..." name="password" required> <br>
-    <input type="hidden" value="login" name="type"> <br>
-    <button type="submit">Submit</button>
-</form>
+<div class="container">
+	<div class="login">
 
-<p class="register-text" >Don't have an account? <a href="/login/register">Register here!</a></p>
+        <h1>Log in</h1>
+
+		<form action="/login" method="post">
+			<label for="username" class="form-label">Username:</label>
+			<input type="text" placeholder="Username..." name="username" id="username" required>
+			<br>
+			<label for="password" class="form-label">Password:</label>
+			<input type="password" placeholder="Password..." name="password" id="password" required>
+            <br>
+			<label>
+		        <input type="checkbox" class="filled-in" checked="checked" name="rememberMe" />
+		        <span>Remember me </span>
+		    </label>
+
+			<input type="hidden" value="login" name="type"> <br> <br> <br>
+			<input type="submit" value="Log in" class="button login-btn center">
+		</form>
+	</div>
+</div>
+<p class="register-text" >Don't have an account? <a href="/login/register">Register here</a>!</p>
 
 <%- include('other/footer'); -%>

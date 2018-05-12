@@ -2,12 +2,12 @@
     <nav>
         <div class="container">
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">Logo</a>
+                <a href="/" class="brand-logo">Blogsite</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <!-- Desktop nav -->
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="#">Browse</a></li>
-                    <li><a href="#">Blog</a></li>
+                <ul class="right hide-on-med-and-down pc-nav">
+                    <li><a href="/browse">Browse</a></li>
+                    <li><a href="/profile/blog">Blog</a></li>
                     <li><a class="dropdown-trigger" href="#!" data-target="account-dropdown">Account<i class="material-icons right">account_circle</i></a></li>
                 </ul>
             </div>
@@ -17,22 +17,24 @@
 
     <!-- Mobile nav -->
     <ul class="sidenav" id="mobile-demo">
-        <li><a href="#">Browse</a></li>
-        <li><a href="#">Blog</a></li>
+        <li><a href="/browse">Browse</a></li>
+        <li><a href="/profile/blog">Blog</a></li>
         <li><a class="dropdown-trigger" href="#!" data-target="account-dropdown-mobile">Account<i class="material-icons right">account_circle</i></a></li>
     </ul>
 
     <!-- Account dropdown -->
+
+	<!-- Mobile -->
     <ul id="account-dropdown-mobile" class="dropdown-content">
-        <li><a href="#!">Manage</a></li>
-        <li><a href="#!">Profile</a></li>
-        <li class="divider"></li>
-        <li><a href="/login/logout">Log out</a></li>
+        <li><a href="/profile/manage"><i class="material-icons">build</i>Manage</a></li>
+        <li><a href="/profile"><i class="material-icons">face</i>Profile</a></li>
+        <li><a href="/login/logout"><i class="material-icons">lock_open</i> <b>Log out</b> </a></li>
     </ul>
+	<!-- Desktop -->
     <ul id="account-dropdown" class="dropdown-content">
-        <li><a href="#!">Manage</a></li>
-        <li><a href="#!">Profile</a></li>
-        <li class="divider"></li>
-        <li><a href="/login/logout">Log out</a></li>
+        <li><a href="/profile/manage"> <i class="material-icons">build</i> Manage</a></li>
+        <li><a href="/profile"><i class="material-icons">face</i>Profile</a></li>
+        <li><a href="/login/logout"> <i class="material-icons">lock_open</i> <b>Log out</b> </a></li>
+		<li> <i class="material-icons navbar-close">close</i> </li>
     </ul>
 </div>

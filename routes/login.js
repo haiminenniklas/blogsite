@@ -6,7 +6,6 @@ let cookieapi = require("../api/cookie");
 let userapi = require("../api/user");
 
 router.get('/', function(req, res, next){
-
     res.render('login', {});
 
 });
@@ -23,6 +22,12 @@ router.get('/logout', function(req, res, next){
     } else {
         //Delete the login cookie and send the user to the login page
         cookie.deleteCookie("login");
+
+        //If user has activated remember me, remove the cookie that nobody can login with that account again
+        if(req.cookies.rememberMe !== undefined){
+            cookie.deleteCookie("rememberMe");
+        }
+
         res.redirect('/login');
     }
 
@@ -40,27 +45,32 @@ router.post('/', function(req, res, next){
         let password = req.body.password;
         let username = req.body.username;
 
-        let sql = `SELECT password FROM users WHERE username = '${username}';`;
-        mysql.execQuery(sql, (error, results, fields) => {
+		let sql = `SELECT id,password FROM users WHERE username = '${username}';`;
+		mysql.execQuery(sql, (error, results, fields) => {
 
-            if(error){
-                res.send("Error when logging in, please try again later!");
-            } else {
-                for(let i = 0; i < results.length; i++){
-                    let user = results[i];
-                    util.checkPassword(password, user.password, function(result){
-                          if(result){
-                              cookie.setCookie("login", true, 1);
-                              res.redirect("/");
-                          }  else {
-                              res.redirect("/login");
-                          }
-                    });
+			if(error){
+				res.send("Error when logging in, please try again later!");
+			} else {
+				for(let i = 0; i < results.length; i++){
+					let user = results[i];
+					util.checkPassword(password, user.password, function(result){
+						  if(result){
+							  //If user wanted the system to remember his/her login
+  							  if(req.body.rememberMe !== undefined){
+  								  //Set the remember cookie to expire in two months
+  								  cookie.setCookie("rememberMe", "true;" + user.id, 61);
+  							  }
+							  cookie.setCookie("login", "true;" + user.id, 1);
+							  res.redirect("/");
+						  }  else {
+							  res.redirect("/login");
+						  }
+					});
 
-                }
-            }
+				}
+			}
 
-        });
+		});
 
     } else if (req.body.type === "register"){
 
@@ -99,4 +109,3 @@ router.get('/register', function(req, res, next){
 });
 
 module.exports = router;
-

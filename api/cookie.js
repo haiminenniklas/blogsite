@@ -1,6 +1,6 @@
 let cookieparser = require("cookie-parser");
 
-let Cookie = function Cookie(req, res){
+export function Cookie(req, res){
 
 
     //Getters and setters
