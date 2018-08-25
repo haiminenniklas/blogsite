@@ -6,8 +6,11 @@ let cookieapi = require("../api/cookie");
 let userapi = require("../api/user");
 
 router.get('/', function(req, res, next){
-    res.render('login', {});
-
+    if(req.cookies.login !== undefined){
+        res.redirect('/');
+    } else {
+        res.render('login', {});
+    }
 });
 
 router.get('/logout', function(req, res, next){
@@ -105,7 +108,12 @@ router.post('/', function(req, res, next){
 });
 
 router.get('/register', function(req, res, next){
-    res.render('register', {});
+
+    if(req.cookies.login !== undefined){
+        res.redirect('/');
+    } else {
+        res.render('register', {});
+    }
 });
 
 module.exports = router;

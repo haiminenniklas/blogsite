@@ -31,6 +31,9 @@ nav {
     color: var(--black) !important;
 	font-size: 1.3rem;
 }
+#nav {
+    margin-bottom: 50px;
+}
 
 /* Other */
 
@@ -117,4 +120,73 @@ input:focus + label, textarea:focus {
 	color: var(--black) !important;
     font-weight: bold;
     font-size: 1.6rem;
+}
+
+/* Date picker style */
+
+.datepicker-date-display {
+    background-color: var(--blue) !important;
+}
+.datepicker-table td.is-selected {
+    background-color: var(--blue) !important;
+}
+
+.datepicker-table td.is-today {
+    color: black !important;
+}
+
+.datepicker-cancel, .datepicker-clear, .datepicker-today, .datepicker-done {
+    color: var(--blue) !important;
+}
+
+/* Profile code */
+
+.profile-info {
+
+    padding: 15px 10px;
+    margin: 40px 0;
+    font-size: 1.1rem;
+
+    -webkit-box-shadow: 3px 4px 16px -2px rgba(51,50,51,0.69);
+    -moz-box-shadow: 3px 4px 16px -2px rgba(51,50,51,0.69);
+    box-shadow: 3px 4px 16px -2px rgba(51,50,51,0.69);
+}
+
+.profile-info .header {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.profile-info .header span {
+    font-size: 1.3rem;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.info > p, .settings > p {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.info, .settings {
+    padding: 10px 0;
+}
+
+/* Main page style */
+.i-title {
+    color: black;
+    font-weight: bold;
+    font-size: 2.2rem;
+}
+
+.subscriptions {
+    -webkit-box-shadow: 3px 4px 16px -2px rgba(51,50,51,0.69);
+    -moz-box-shadow: 3px 4px 16px -2px rgba(51,50,51,0.69);
+    box-shadow: 3px 4px 16px -2px rgba(51,50,51,0.69);
+}
+
+@media only screen and (max-width: 607px){
+    .i-title {
+        font-size: 1.7rem !important;
+    }
 }

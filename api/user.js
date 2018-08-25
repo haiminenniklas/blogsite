@@ -2,6 +2,28 @@ const mysql = require("./mysql.js");
 const uuid = require("uuid");
 const util = require("./util.js");
 
+export function getUser(id, callback){
+
+    mysql.execQuery(`SELECT * FROM users WHERE id = '${id}';`, (error, results, fields) => {
+
+        if(error){
+            console.log("Couldn't fetch user data for id " + id);
+            callback(null);
+        } else {
+            let data = results[0];
+            let user = new User(data.username, data.birthdate, data.description, data.first_name, data.last_name, data.city,
+                data.country, data.password);
+            user.setId(data.id);
+            user.setJoinDate(data.joindate);
+            user.setBlogs(data.blogs.split(','));
+            user.setSubscriptions(data.subscribed_to.split(','));
+            callback(user);
+        }
+
+    });
+
+}
+
 //A function that creates and user with given data, and creates an hash for the password, if possible
 //Callback returns if the creation had no errors
 let createUser = function(username, birthDate, description, firstName, lastName, city, country, plainPassword, callback){
@@ -149,7 +171,7 @@ let User = function User(username, birthDate, description, firstName, lastName, 
         this.canCreate((available) => {
            if(available){
                 //Create user, leave subscriptions and blogs to empty (last two), because the user doesn't have blogs when account is created, nor subscriptions
-                mysql.execQuery(`INSERT INTO users VALUES('${this.getId()}', '${this.username}','${this.birthDate}', '${this.getJoinDate()}', '${this.description}', '${this.firstName}', '${this.lastName}', '${this.city}', '${this.country}', '[]', '[]', '${this.password}');`,
+                mysql.execQuery(`INSERT INTO users VALUES('${this.getId()}', '${this.username}','${this.birthDate}', '${this.getJoinDate()}', '${this.description}', '${this.firstName}', '${this.lastName}', '${this.city}', '${this.country}', '', '', '${this.password}');`,
                     (error, results, fields) => {
                         if(error){
                             callback(error);

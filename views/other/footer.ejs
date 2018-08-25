@@ -5,10 +5,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 <script src="/javascripts/cookie.js"></script>
+<script src="/javascripts/search.js"></script>
 
 <!-- Insert all JavaScripts here! -->
 
 <script>
+
     $(document).ready(function(){
         $(".sidenav").sidenav();
         let dropdown = $(".dropdown-trigger");
@@ -17,6 +19,16 @@
 		$("#navbar-close").click((e) => {
 			dropdown.close();
 		});
+
+		let today = new Date();
+		let year = today.getFullYear();
+
+        $('.datepicker').datepicker({
+            format: "dd.mm.yyyy",
+            maxDate: today,
+            firstDay: 1,
+            yearRange: [1900,year]
+        });
 
     });
 

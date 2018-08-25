@@ -1,6 +1,10 @@
 const bcrypt = require("bcrypt");
 const mysql = require("./mysql.js");
 
+let sendToMain = function(loginCookie){
+
+}
+
 let hash = function(plainPassword, callback){
 
     bcrypt.hash(plainPassword, 10, (err, hash) => {

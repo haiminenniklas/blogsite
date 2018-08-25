@@ -1,0 +1,46 @@
+<%- include('../other/header'); -%>
+
+<div class="container">
+    <div class="row">
+        <div class="col m8 s12">
+        </div>
+        <div class="col m4 s12">
+
+            <div class="profile-info">
+                <div class="container">
+                    <p class="header"><%- user.username %> <br>
+                        <span><%- user.firstName %> <%- user.lastName %></span></p>
+
+                    <div class="divider"></div>
+                    <div class="info">
+                        <p>Info:</p>
+                        <div class="container">
+                            <p id="birth"> <b>Born:</b> <%- user.birthDate %></p>
+                            <p id="joined"> <b>Joined:</b> <%- user.joinDate %></p>
+                            <div class="divider"></div>
+                            <p id="from"> <b>From:</b> <%- user.city %>, <%- user.country %></p>
+                            <div class="divider"></div>
+                            <p id="blogs"><b>Blogs: </b><%- user.blogs.length -1 %></p>
+                            <p id="subscriptions"><b>Subscribed to:</b> <%- user.subscribedTo.length -1 %></p>
+                        </div>
+                    </div>
+
+
+                    <div class="divider"></div>
+                    <div class="settings">
+                        <p>Settings:</p>
+                        <div class="container">
+                            <p><a href="/profile/manage">Manage</a></p>
+                            <p><a href="/profile/blog">Blog</a></p>
+                            <p><a href="/login/logout">Log out</a></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<%- include('../other/footer'); -%>
