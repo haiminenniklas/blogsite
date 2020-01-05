@@ -4,7 +4,7 @@ const mysql = require("mysql");
 const conn = {
     host: "160.153.131.217",
     user: "smath",
-    password: "Smath1234!",
+    password: "--",
     db: "niklas_test"
 };
 
